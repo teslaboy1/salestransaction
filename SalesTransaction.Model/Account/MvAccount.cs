@@ -4,7 +4,14 @@ using System.Text;
 
 namespace SalesTransaction.Model.Account
 {
-    class MvAccount
+    public class MvAccount
     {
+    }
+
+    public class MvLogin
+    { 
+        public string Username {get; set;}
+
+        public string Password { get; set;}
     }
 }
