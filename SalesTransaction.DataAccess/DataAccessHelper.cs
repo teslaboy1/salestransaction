@@ -49,9 +49,9 @@ namespace SalesTransaction.DataAccess
                 var dataTable = new DataTable();
                 dataTable.Load(reader);
 
-                if (dataTable.Rows[0] != null && dataTable.Rows[0]["Json"].ToString() != "")
+                if (dataTable.Rows[0] != null && dataTable.Rows[0]["json"].ToString() != "")
                 {
-                    return JsonConvert.DeserializeObject(dataTable.Rows[0]["Json"].ToString());
+                    return JsonConvert.DeserializeObject(dataTable.Rows[0]["json"].ToString());
                 }
                 else 
                 {

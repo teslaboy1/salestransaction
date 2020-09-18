@@ -38,11 +38,14 @@ namespace SalesTransaction.Service.Account
             using (var con = _da.GetConnection())
             {
                 var cmd = con.CreateCommand();
-
-               
-
                 cmd.CommandType = CommandType.StoredProcedure;
-               
+                cmd.CommandText = "SpUserSel";
+                cmd.Parameters.AddWithValue("@UserName",login.UserName);
+                cmd.Parameters.AddWithValue("@Password", login.Password);
+                cmd.CommandTimeout = _commandTimeout;
+
+
+
 
 
                 using (SqlDataReader redr = cmd.ExecuteReader())
@@ -71,7 +74,13 @@ namespace SalesTransaction.Service.Account
         {
             using (var con = _da.GetConnection())
             {
-                
+                var cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SpUserDetailSel";
+                dynamic jsonNew = JsonConvert.DeserializeObject(json);
+                cmd.Parameters.AddWithValue("@UserId", Convert.ToString(jsonNew.UserId));
+                cmd.CommandTimeout = _commandTimeout;
+
 
                 using (SqlDataReader redr = cmd.ExecuteReader())
                 {

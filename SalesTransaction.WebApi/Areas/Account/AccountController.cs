@@ -19,7 +19,7 @@ namespace SalesTransaction.WebApi.Areas.Account
         }
 
         [HttpPost]
-        public IActionResult Logic([FromBody] MvLogin login)
+        public IActionResult Login([FromBody] MvLogin login)
         {
             try
             {
@@ -28,7 +28,7 @@ namespace SalesTransaction.WebApi.Areas.Account
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
         }
 
@@ -42,7 +42,7 @@ namespace SalesTransaction.WebApi.Areas.Account
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw ;
             }
         }
     }
