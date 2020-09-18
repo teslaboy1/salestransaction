@@ -24,6 +24,9 @@
     ".NETCoreApp,Version=v3.1": {
       "SalesTransaction.WebApi/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.1.8",
+          "Newtonsoft.Json": "12.0.3",
+          "SalesTransaction.DataAccess": "1.0.0",
           "SalesTransaction.Model": "1.0.0",
           "SalesTransaction.Service": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
@@ -103,7 +106,7 @@
           "Microsoft.AspNetCore.StaticFiles": "3.1.0.0",
           "Microsoft.AspNetCore.WebSockets": "3.1.0.0",
           "Microsoft.AspNetCore.WebUtilities": "3.1.0.0",
-          "Microsoft.CSharp": "4.0.0.0",
+          "Microsoft.CSharp.Reference": "4.0.0.0",
           "Microsoft.Extensions.Caching.Abstractions": "3.1.0.0",
           "Microsoft.Extensions.Caching.Memory": "3.1.0.0",
           "Microsoft.Extensions.Configuration.Binder": "3.1.0.0",
@@ -313,6 +316,38 @@
           "SalesTransaction.WebApi.dll": {}
         }
       },
+      "Microsoft.AspNetCore.JsonPatch/3.1.8": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll": {
+            "assemblyVersion": "3.1.8.0",
+            "fileVersion": "3.100.820.42106"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.NewtonsoftJson/3.1.8": {
+        "dependencies": {
+          "Microsoft.AspNetCore.JsonPatch": "3.1.8",
+          "Newtonsoft.Json": "12.0.3",
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll": {
+            "assemblyVersion": "3.1.8.0",
+            "fileVersion": "3.100.820.42106"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll": {}
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {},
       "Microsoft.Extensions.Configuration/3.1.8": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "3.1.8"
@@ -368,6 +403,20 @@
         },
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.2.22727"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {}
         }
       },
       "runtime.native.System.Data.SqlClient.sni/4.7.0": {
@@ -936,7 +985,7 @@
         },
         "compileOnly": true
       },
-      "Microsoft.CSharp/4.0.0.0": {
+      "Microsoft.CSharp.Reference/4.0.0.0": {
         "compile": {
           "Microsoft.CSharp.dll": {}
         },
@@ -2156,6 +2205,27 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Microsoft.AspNetCore.JsonPatch/3.1.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VyY44zszuKBJ/rsbcgIKu1NjRPr2CKdmQrs75yR+YaEiD8WEWnbqoxw5DO8iQBFCKb1z4Xs5Jzc5p0b41PNRmg==",
+      "path": "microsoft.aspnetcore.jsonpatch/3.1.8",
+      "hashPath": "microsoft.aspnetcore.jsonpatch.3.1.8.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Mvc.NewtonsoftJson/3.1.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xlYBboQAji96pWvrH5sDqOJSOGnB4zEWXrJrqiRBEWxmAWgWziRG0jQcg7S9SDPYLfvsIukDjI20LSyjxBBDCA==",
+      "path": "microsoft.aspnetcore.mvc.newtonsoftjson/3.1.8",
+      "hashPath": "microsoft.aspnetcore.mvc.newtonsoftjson.3.1.8.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "path": "microsoft.csharp/4.7.0",
+      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
+    },
     "Microsoft.Extensions.Configuration/3.1.8": {
       "type": "package",
       "serviceable": true,
@@ -2197,6 +2267,13 @@
       "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
       "path": "newtonsoft.json/12.0.3",
       "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
+    },
+    "Newtonsoft.Json.Bson/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QYFyxhaABwmq3p/21VrZNYvCg3DaEoN/wUuw5nmfAf0X3HLjgupwhkEWdgfb9nvGAUIv3osmZoD3kKl4jxEmYQ==",
+      "path": "newtonsoft.json.bson/1.0.2",
+      "hashPath": "newtonsoft.json.bson.1.0.2.nupkg.sha512"
     },
     "runtime.native.System.Data.SqlClient.sni/4.7.0": {
       "type": "package",
@@ -2647,7 +2724,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.CSharp/4.0.0.0": {
+    "Microsoft.CSharp.Reference/4.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
