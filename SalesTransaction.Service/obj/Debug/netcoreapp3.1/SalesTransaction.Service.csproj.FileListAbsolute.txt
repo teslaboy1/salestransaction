@@ -1,0 +1,14 @@
+C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.Service\bin\Debug\netcoreapp3.1\SalesTransaction.DataAccess.dll
+C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.Service\bin\Debug\netcoreapp3.1\SalesTransaction.Model.dll
+C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.Service\obj\Debug\netcoreapp3.1\SalesTransaction.Service.csprojAssemblyReference.cache
+C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.Service\obj\Debug\netcoreapp3.1\SalesTransaction.Service.AssemblyInfoInputs.cache
+C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.Service\obj\Debug\netcoreapp3.1\SalesTransaction.Service.AssemblyInfo.cs
+C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.Service\obj\Debug\netcoreapp3.1\SalesTransaction.Service.csproj.CoreCompileInputs.cache
+C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.Service\bin\Debug\netcoreapp3.1\SalesTransaction.Service.deps.json
+C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.Service\bin\Debug\netcoreapp3.1\SalesTransaction.Service.dll
+C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.Service\bin\Debug\netcoreapp3.1\SalesTransaction.Service.pdb
+C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.Service\bin\Debug\netcoreapp3.1\SalesTransaction.DataAccess.pdb
+C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.Service\bin\Debug\netcoreapp3.1\SalesTransaction.Model.pdb
+C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.Service\obj\Debug\netcoreapp3.1\SalesTransaction.Service.csproj.CopyComplete
+C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.Service\obj\Debug\netcoreapp3.1\SalesTransaction.Service.dll
+C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.Service\obj\Debug\netcoreapp3.1\SalesTransaction.Service.pdb

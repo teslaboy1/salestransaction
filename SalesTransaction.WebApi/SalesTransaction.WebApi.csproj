@@ -4,5 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SalesTransaction.Model\SalesTransaction.Model.csproj" />
+    <ProjectReference Include="..\SalesTransaction.Service\SalesTransaction.Service.csproj" />
+  </ItemGroup>
+
 
 </Project>
