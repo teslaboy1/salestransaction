@@ -11,11 +11,11 @@ namespace SalesTransaction.DataAccess
     public class DataAccessHelper
     {
         private SqlConnection _con;
-        private string _conString;
+        private string _connectionString;
 
         public DataAccessHelper(string connectionString)
         {
-            _conString = connectionString;
+            _connectionString = connectionString;
         }
 
         public SqlConnection GetConnection()
@@ -32,7 +32,7 @@ namespace SalesTransaction.DataAccess
         }
         public void SetConnection()
         {
-                _con = new SqlConnection(_conString);
+                _con = new SqlConnection(_connectionString);
                 if (_con.State == ConnectionState.Closed)
                 {
                     _con.Open();
