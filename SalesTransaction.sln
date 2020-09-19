@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesTransaction.Web", "Sal
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesTransaction.WebApi", "SalesTransaction.WebApi\SalesTransaction.WebApi.csproj", "{4CD820E7-C60C-44AA-8A35-9705CF632B02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTransaction.DataAccess", "SalesTransaction.DataAccess\SalesTransaction.DataAccess.csproj", "{C80B2A4A-16ED-4BE1-8F28-D1AA61D22E30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesTransaction.DataAccess", "SalesTransaction.DataAccess\SalesTransaction.DataAccess.csproj", "{C80B2A4A-16ED-4BE1-8F28-D1AA61D22E30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTransaction.Model", "SalesTransaction.Model\SalesTransaction.Model.csproj", "{F4BE458F-011D-4D5E-9A0F-62A10967AA4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesTransaction.Model", "SalesTransaction.Model\SalesTransaction.Model.csproj", "{F4BE458F-011D-4D5E-9A0F-62A10967AA4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTransaction.Service", "SalesTransaction.Service\SalesTransaction.Service.csproj", "{49BDF528-8225-4DBC-AE4A-27C75DC1EB73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesTransaction.Service", "SalesTransaction.Service\SalesTransaction.Service.csproj", "{49BDF528-8225-4DBC-AE4A-27C75DC1EB73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,7 +20,6 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{4E10F4B5-5874-4EA6-ACC5-16D639F21AF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4E10F4B5-5874-4EA6-ACC5-16D639F21AF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E10F4B5-5874-4EA6-ACC5-16D639F21AF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E10F4B5-5874-4EA6-ACC5-16D639F21AF4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4CD820E7-C60C-44AA-8A35-9705CF632B02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
