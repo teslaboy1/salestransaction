@@ -43,6 +43,8 @@ namespace SalesTransaction.WebApi.Areas.Account
             catch (Exception ex)
             {
                 throw ;
+           
+               
             }
         }
     }

@@ -70,14 +70,14 @@ namespace SalesTransaction.Service.Account
             }
         }
 
-        public dynamic GetUserDetail(string json)
+        public dynamic GetUserDetail(String json)
         {
             using (var con = _da.GetConnection())
             {
                 var cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "SpUserDetailSel";
                 dynamic jsonNew = JsonConvert.DeserializeObject(json);
+                cmd.CommandText = "SpUserDetailSel";
                 cmd.Parameters.AddWithValue("@UserId", Convert.ToString(jsonNew.UserId));
                 cmd.CommandTimeout = _commandTimeout;
 
