@@ -72,17 +72,22 @@ namespace SalesTransaction.Service.Account
 
         public dynamic GetUserDetail(String json)
         {
-            using (var con = _da.GetConnection())
+           using (var con = _da.GetConnection())
             {
                 var cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
+
                 dynamic jsonNew = JsonConvert.DeserializeObject(json);
+                //cmd.CommandText = "select(select a.UserId,a.UserName,a.[Password],a.InsertPersonId,a.InsertDate from dbo.[User] as a where a.UserId = " + Convert.ToString(jsonNew.UserId) + " FOR JSON PATH, WITHOUT_ARRAY_WRAPPER) AS json";
                 cmd.CommandText = "SpUserDetailSel";
-                cmd.Parameters.AddWithValue("@UserId", Convert.ToString(jsonNew.UserId));
+                cmd.Parameters.AddWithValue("@UserId", Convert.ToString(jsonNew.userId));
                 cmd.CommandTimeout = _commandTimeout;
 
+         
 
-                using (SqlDataReader redr = cmd.ExecuteReader())
+
+
+               using (SqlDataReader redr = cmd.ExecuteReader())
                 {
                     try
                     {

@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Data.SqlClient;
-using System.Security.Cryptography.X509Certificates;
 using System.Data;
 using Newtonsoft.Json;
 

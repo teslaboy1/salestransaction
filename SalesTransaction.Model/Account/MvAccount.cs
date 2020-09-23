@@ -11,11 +11,11 @@ namespace SalesTransaction.Model.Account
 
     public class MvLogin
     {
-        //public int UserId { get; set; }            
-        //[Required]
+                  
+        public int userId { get; set; }
         public string UserName {get; set;}
 
-        //[Required]
+        
         public string Password { get; set;}
     }
 }
