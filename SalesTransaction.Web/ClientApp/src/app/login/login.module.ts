@@ -32,24 +32,12 @@ const routes: Routes = [
       MatInputModule,
       MatButtonModule,
       FormsModule,
-      MatSnackBarModule,
-      HttpClientModule,
-      MatToolbarModule,
-      MatCardModule
+      MatSnackBarModule
     ],
     declarations: [LoginComponent],
     providers: [LoginService],
     exports: [
       LoginComponent,
-      FormsModule,
-      ReactiveFormsModule,
-      MatFormFieldModule,
-      MatInputModule,
-      MatButtonModule,
-      MatCardModule,
-      MatToolbarModule,
-      HttpClientModule,
-      MatSnackBarModule
     ]
   })
 export class LoginModule { }

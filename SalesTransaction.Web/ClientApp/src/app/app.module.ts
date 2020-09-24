@@ -11,7 +11,6 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { LoginComponent } from './login/login.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FishComponent } from './fish/fish.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full'},
@@ -29,8 +28,7 @@ const appRoutes: Routes = [
   declarations: [	
     AppComponent,
     NavMenuComponent,
-    HomeComponent,
-      FishComponent
+    HomeComponent
    ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -12,7 +12,7 @@ export class LoginService {
 
     constructor(private httpClient: HttpClient){}
 
-    getLogin(json): Observable<any>{
+    getLogin(json): Observable<any> {
 
             return this.httpClient.post(this.apiUrl + '/login', json, { headers: this.getHeaderOptions()});
           }

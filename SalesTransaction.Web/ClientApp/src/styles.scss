@@ -5,17 +5,11 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-
-a {
-  color: #0366d6;
+.warning{
+  background-color: orange !important;
+  color: #fff !important;
 }
-
-code {
-  color: #e01a76;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
+  .success{
+    background-color: green !important;
+    color: #fff !important;
+  }
