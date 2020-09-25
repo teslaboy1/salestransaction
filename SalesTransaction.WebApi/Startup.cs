@@ -30,13 +30,13 @@ namespace SalesTransaction.WebApi
             
             services.AddCors(Options =>
             {
-                Options.AddPolicy(name: "AllowOrigin",
-                    builder =>
-                    {
-                        
-                        builder.WithOrigins("http://localhost:56399","http://localhost:44389").WithMethods("{POST}", "GET");
-                    }
-                    );
+                
+                Options.AddPolicy
+                (name: "AllowOrigin",
+                builder => builder.WithOrigins("http://localhost:4200","http://localhost:56399")
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
             });
 
             services.AddControllers();

@@ -25,7 +25,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent

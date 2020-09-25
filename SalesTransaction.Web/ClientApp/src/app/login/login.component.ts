@@ -4,6 +4,7 @@ import { LoginService } from './login.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MvLogin } from './login.model';
+import { UtilityService } from 'src/core/services/utility.service';
 
 
 
@@ -16,17 +17,15 @@ import { MvLogin } from './login.model';
 export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
 
   loginForm: FormGroup;
-  login: MvLogin = {} as MvLogin;
+  login: MvLogin = <MvLogin>{};
   errorMessage: any;
-  errorMessageType: any = {
-    invalidForm: 'Invalid form value',
-    invalidLogin: 'Invalid name or password'
-  };
 
   constructor(public fb: FormBuilder,
-              public loginService: LoginService, 
-              public router: Router, 
-              public snackbar: MatSnackBar) { }
+              public ls: LoginService,
+              public router: Router,
+              public snackbar: MatSnackBar,
+              private us: UtilityService
+              ) { }
 
 
   ngOnInit() {
@@ -38,45 +37,38 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
 
   }
 
-
-  ngAfterViewInit(): void {
-    this.loginForm.updateValueAndValidity();
-  }
-
-  ngOnDestroy(): void {
-    throw new Error('not implemented.');
-  }
-
   submitForm() { // call server/api and authenticate
-    this.errorMessage = null;
+
+    this.errorMessage = '';
     if (this.loginForm.valid) {
 
       // const json = this.loginForm.value;
-      this.login.Username = this.loginForm.get('Username').value.trim();
-      this.login.Password = this.loginForm.get('Password').value.trim();
-      this.loginService.getLogin(this.login).subscribe((response: any) => {
+      this.login.userName = this.loginForm.get('userName').value.trim();
+      this.login.password = this.loginForm.get('password').value.trim();
+
+      this.ls.getLogin(this.login).subscribe((response: any) => {
+
         if (response) {
 
-          this.openSnackBar('Login Success!', 'success');
+          this.us.openSnackBar('Login Successful', 'success');
           this.router.navigate(['/user-detail']);
-
-
         } else {
 
-          this.errorMessage = this.errorMessageType.invalidLogin;
+          this.errorMessage = 'Invalid UserName or Password!';
         }
       });
     } else {
 
-      this.errorMessage = this.errorMessageType.invalidForm;
+      this.errorMessage = 'Invalid Form!';
     }
   }
-  openSnackBar(message, action) {
-    this.snackbar.open(message, action, {
-      duration: 3000,
-      verticalPosition: 'top',
-      horizontalPosition: 'right',
-      panelClass: ['success']
-    });
+
+  ngAfterViewInit() {
+
+    this.loginForm.updateValueAndValidity();
+  }
+
+  ngOnDestroy() {
+
   }
 }

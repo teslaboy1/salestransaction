@@ -1,4 +1,4 @@
 export interface MvLogin {
-    Username: string;
-    Password: string;
+    userName: string;
+    password: string;
 }
