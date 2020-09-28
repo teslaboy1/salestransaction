@@ -1,4 +1,10 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { MvUserDetail } from './user-detail.model';
+import { UserDetailService } from './user-detail.service';
+import { map, mergeMap } from 'rxjs/operators';
+import { MatError } from '@angular/material';
 
 @Component({
   selector: 'app-user-detail',
@@ -7,9 +13,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDetailComponent implements OnInit {
 
-  constructor() { }
+  userMessage: string = null;
+  displayedColumns: string[];
+  dataSource: MvUserDetail[] = [];
 
-  ngOnInit() {
+  constructor(
+    private userDetailService: UserDetailService) { }
+
+  ngOnInit(): void {
+
+    this.displayedColumns = ['userId', 'userName', 'password', 'insertPersonId', 'insertDate'];
+    this.getUserDetail();
+  }
+
+  getUserDetail() {
+
+    // tslint:disable-next-line: radix
+    const userId = parseInt(localStorage.getItem('userId'));
+    this.userDetailService.getUser(userId).subscribe((data: any) => {
+      if (data) {
+        this.dataSource = [data];
+        console.log(Response);
+      } else {
+        this.dataSource = [];
+        console.log('nothing!');
+      }
+    });
+
+  }
+
+  getAllUsers() {
+    this.userDetailService.getAllUserDetail().subscribe((data: any) => {
+
+      if (data && data.data) {
+        this.dataSource = data.data;
+      } else {
+        this.dataSource = [];
+        this.userMessage = 'No data found !';
+      }
+    });
   }
 
 }

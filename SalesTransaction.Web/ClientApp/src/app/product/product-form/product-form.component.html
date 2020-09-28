@@ -1,0 +1,42 @@
+<div class="form-container">
+  <mat-toolbar color="primary">{{action}} Product</mat-toolbar>
+
+  <form class="product-form" [formGroup]="productForm">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Product Name</mat-label>
+      <input matInput formControlName="productName" [(ngModel)]="selectedProduct.productName" required>
+      <mat-error *ngIf="productForm.controls['productName'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Quantity Available</mat-label>
+      <input matInput formControlName="description" [(ngModel)]="selectedProduct.quantityAvailable" required>
+      <mat-error *ngIf="productForm.controls['quantityAvailable'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Actual Price</mat-label>
+      <input matInput formControlName="actualPrice" [(ngModel)]="selectedProduct.actualPrice" required>
+      <mat-error *ngIf="productForm.controls['actualPrice'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Start Date</mat-label>
+      <input matInput formControlName="startDate" [(ngModel)]="selectedProduct.startDate" placeholder="mm/dd/yyyy"
+        required>
+      <mat-error *ngIf="productForm.controls['startDate'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+
+      <mat-label>End Date</mat-label>
+      <input matInput formControlName="endDate" [(ngModel)]="selectedProduct.endDate" placeholder="mm/dd/yyyy" required>
+      <mat-error *ngIf="productForm.controls['endDate'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+  </form>
+
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="productForm.invalid">Save</button>
+    <button mat-raised-button color="warn" (click)="onClose()">Close</button>
+  </div>
+</div>

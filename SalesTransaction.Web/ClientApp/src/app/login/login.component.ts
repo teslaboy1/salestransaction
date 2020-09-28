@@ -50,6 +50,7 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
 
         if (response) {
 
+          localStorage.setItem('userId', response.userId);
           this.us.openSnackBar('Login Successful', 'success');
           this.router.navigate(['/user-detail']);
         } else {

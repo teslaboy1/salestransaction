@@ -1,0 +1,48 @@
+<h1>Product Details</h1>
+
+<div>
+  <button mat-raised-button (click)="addProduct()" color="primary"> Add Product</button>
+  <button mat-raised-button (click)="editProduct()" color="primary" class="ml-3">Edit Product</button>
+  <br>
+  <br>
+  <h4> products!!! </h4>
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="productId">
+      <mat-header-cell *matHeaderCellDef> Product Id </mat-header-cell>
+      <mat-cell *matCellDef="let ProductDetail"> {{ProductDetail.productId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="productName">
+      <mat-header-cell *matHeaderCellDef> Product Name </mat-header-cell>
+      <mat-cell *matCellDef="let ProductDetail"> {{ProductDetail.productName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="quantityAvailable">
+      <mat-header-cell *matHeaderCellDef> Available </mat-header-cell>
+      <mat-cell *matCellDef="let ProductDetail"> {{ProductDetail.quantityAvailable}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actualPrice">
+      <mat-header-cell *matHeaderCellDef> Actual Price (NRP)</mat-header-cell>
+      <mat-cell *matCellDef="let ProductDetail"> Rs. {{ProductDetail.actualPrice}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="startDate">
+      <mat-header-cell *matHeaderCellDef> Start Date</mat-header-cell>
+      <mat-cell *matCellDef="let ProductDetail"> {{ProductDetail.startDate}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="endDate">
+      <mat-header-cell *matHeaderCellDef> End Date</mat-header-cell>
+      <mat-cell *matCellDef="let ProductDetail">{{ProductDetail.endDate}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow($event, row)"
+      [ngClass]="{hovered: row.hovered, highlighted: selection.isSelected(row)}" (mouseover)="row.hovered = true"
+      (mouseout)="row.hovered = false">
+    </mat-row>
+  </mat-table>
+  <span *ngIf="userMessage != ''" style="color: red;font-size: medium;font-weight: bold;"> {{userMessage}}</span>
+</div>

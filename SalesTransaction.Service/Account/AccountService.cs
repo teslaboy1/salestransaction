@@ -108,5 +108,38 @@ namespace SalesTransaction.Service.Account
             }
 
         }
+
+        public dynamic GetAllUserDetail()
+        {
+            using (var con = _da.GetConnection())
+            {
+                var cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+ 
+                cmd.CommandText = "SpAllUserDetailSel";
+                cmd.CommandTimeout = _commandTimeout;
+
+                using (SqlDataReader redr = cmd.ExecuteReader())
+                {
+                    try
+                    {
+                        if (redr.HasRows)
+                        {
+                            return _da.GetJson(redr);
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+                }
+
+
+            }
+        }
     }
 }

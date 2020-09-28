@@ -21,7 +21,12 @@ const appRoutes: Routes = [
   {
     path: 'user-detail',
     loadChildren: () => import('./user-detail/user-detail.module').then(m => m.UserDetailModule)
-  }
+  },
+  {
+    path: 'product',
+    loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
+  },
+
 ];
 
 @NgModule({
