@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using SalesTransaction.Service.Account;
+using SalesTransaction.Service.Customer;
 using SalesTransaction.Service.Product;
 
 namespace SalesTransaction.WebApi
@@ -44,6 +45,7 @@ namespace SalesTransaction.WebApi
 
             services.AddTransient<IAccountService, AccountService>();
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ICustomerService, CustomerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,7 +60,7 @@ namespace SalesTransaction.WebApi
 
             app.UseRouting();
 
-            app.UseCors();
+            app.UseCors("AllowOrigin");
 
             app.UseAuthorization();
 

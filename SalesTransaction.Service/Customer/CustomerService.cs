@@ -1,16 +1,16 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using SalesTransaction.DataAccess;
-using SalesTransaction.Model.Product;
+using SalesTransaction.Model.Customer;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 
-namespace SalesTransaction.Service.Product
+namespace SalesTransaction.Service.Customer
 {
-    public class ProductService : IProductService
+    public class CustomerService: ICustomerService
     {
         private DataAccessHelper _da;
         private readonly string _connectionString;
@@ -18,7 +18,7 @@ namespace SalesTransaction.Service.Product
         private IConfiguration _configuration;
 
 
-        public ProductService(IConfiguration configuration)
+        public CustomerService(IConfiguration configuration)
         {
             _configuration = configuration;
             dynamic connectionString = _configuration.GetSection("ConnectionString");
@@ -31,13 +31,13 @@ namespace SalesTransaction.Service.Product
 
             _commandTimeout = Convert.ToInt32(connectionString["CommandTimeout"]);
         }
-        public dynamic GetAllProductDetail()
+        public dynamic GetAllCustomerDetail()
         {
             using (var con = _da.GetConnection())
             {
                 var cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "SpAllProductDetailSel";
+                cmd.CommandText = "SpAllCustomerDetailSel";
                 cmd.CommandTimeout = _commandTimeout;
 
                 using (SqlDataReader redr = cmd.ExecuteReader())
@@ -63,14 +63,14 @@ namespace SalesTransaction.Service.Product
             }
         }
 
-        public bool AddProduct(MvAddProduct product)
+        public bool AddCustomer(MvAddCustomer customer)
         {
             using (var con = _da.GetConnection())
             {
-                var jsonNew = JsonConvert.SerializeObject(product);
+                var jsonNew = JsonConvert.SerializeObject(customer);
                 var cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "SpProductInsTsk_OUTPUT";
+                cmd.CommandText = "SpCustomerCustomerAddressInsTsk_Json";
                 cmd.Parameters.Add("@Json", SqlDbType.NVarChar).Value = jsonNew;
                 cmd.CommandTimeout = _commandTimeout;
 
@@ -86,14 +86,14 @@ namespace SalesTransaction.Service.Product
             }
         }
 
-        public bool EditProduct(MvEditProduct product)
+        public bool EditCustomer(MvEditCustomer customer)
         {
             using (var con = _da.GetConnection())
             {
-                var jsonNew = JsonConvert.SerializeObject(product);
+                var jsonNew = JsonConvert.SerializeObject(customer);
                 var cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "SpProductUpd_OUTPUT";
+                cmd.CommandText = "SpCustomerUpd_OUTPUT";
                 cmd.Parameters.Add("@Json", SqlDbType.NChar).Value = jsonNew;
                 cmd.CommandTimeout = _commandTimeout;
 
@@ -108,5 +108,7 @@ namespace SalesTransaction.Service.Product
 
             }
         }
+
+ 
     }
 }

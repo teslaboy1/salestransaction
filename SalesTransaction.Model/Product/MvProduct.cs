@@ -10,15 +10,22 @@ namespace SalesTransaction.Model.Product
         [Required]
         public string productName { get; set; }
         [Required]
-        public string description { get; set; }
+        public int quantityAvailable { get; set; }
+        [Required]
+        public int marketPrice { get; set; }
         [Required]
         public DateTime startDate { get; set; }
         [Required]
         public DateTime endDate { get; set; }
         [Required]
-        public int rate { get; set; }
+        public DateTime manufactureDate { get; set; }
+        [Required]
+        public DateTime expiryDate { get; set; }
         [Required]
         public int insertPersonId { get; set; }
+
+
+
     }
 
     public class MvEditProduct
@@ -28,14 +35,22 @@ namespace SalesTransaction.Model.Product
         [Required]
         public string productName { get; set; }
         [Required]
-        public string description { get; set; }
+        public string quantityAvailable { get; set; }
+        [Required]
+        public float marketPrice { get; set; }
         [Required]
         public DateTime startDate { get; set; }
         [Required]
         public DateTime endDate { get; set; }
         [Required]
-        public int rate { get; set; }
+        public DateTime manufactureDate { get; set; }
+        [Required]
+        public DateTime expiryDate { get; set; }
         [Required]
         public int insertPersonId { get; set; }
+        [Required]
+        public DateTime insertDate { get; set; }
+
+
     }
 }

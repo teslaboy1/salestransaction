@@ -7,27 +7,27 @@
   </mat-error> -->
 
   <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <ng-container matColumnDef="UserId">
+    <ng-container matColumnDef="userId">
       <mat-header-cell *matHeaderCellDef> User Id </mat-header-cell>
       <mat-cell *matCellDef="let UserDetail"> {{UserDetail.userId}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="UserName">
+    <ng-container matColumnDef="userName">
       <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
       <mat-cell *matCellDef="let UserDetail"> {{UserDetail.userName}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="Password">
+    <ng-container matColumnDef="password">
       <mat-header-cell *matHeaderCellDef> Password </mat-header-cell>
       <mat-cell *matCellDef="let UserDetail"> {{UserDetail.password}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="InsertPersonId">
+    <ng-container matColumnDef="insertPersonId">
       <mat-header-cell *matHeaderCellDef> Person Id </mat-header-cell>
       <mat-cell *matCellDef="let UserDetail"> {{UserDetail.insertPersonId}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="InsertDate">
+    <ng-container matColumnDef="insertDate">
       <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
       <mat-cell *matCellDef="let UserDetail"> {{UserDetail.insertDate}} </mat-cell>
     </ng-container>
