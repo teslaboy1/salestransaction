@@ -3,12 +3,12 @@ export interface MvCustomer {
     firstName: string;
     middleName: string;
     surname: string;
-    contactNo: number;
+    contactNo: string;
 }
 
 export interface MvAddCustomer {
     firstName: string;
     middleName: string;
     surname: string;
-    contactNo: number;
+    contactNo: string;
 }

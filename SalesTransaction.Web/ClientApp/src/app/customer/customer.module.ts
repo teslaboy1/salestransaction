@@ -1,38 +1,43 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
-import { MatButtonModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatTableModule, MatToolbarModule } from '@angular/material';
-import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { CdkTableModule } from '@angular/cdk/table';
-import { CustomerComponent } from './customer.component';
-import { CustomerService } from './customer.service';
+import { MaterialModule } from './../shared/material.module';
+import { ProductFormComponent } from './../product/product-form/product-form.component';
+import { NgModule, Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { CustomerFormComponent } from './customer-form/customer-form.component';
-import { ScrollingModule } from '@angular/cdk/scrolling';
+import { CustomerComponent } from './customer.component';
+import { Routes, RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CdkTableModule } from '@angular/cdk/table';
+import { MatDialogModule, MatFormFieldModule, MatInputModule, MatTableModule, MatToolbarModule } from '@angular/material';
 
-const routes: Routes = [{
-    path: '',
-    component: CustomerComponent
-}];
+const routes: Routes = [
+  { path:'', component: CustomerComponent}
+]
 
 @NgModule({
+  declarations: [
+    CustomerComponent,
+    CustomerFormComponent
+  ],
+  entryComponents:[CustomerFormComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    MatTableModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatDialogModule,
-    ReactiveFormsModule,
-    ScrollingModule,
+    MaterialModule,
     HttpClientModule,
+    ReactiveFormsModule,
     CdkTableModule,
+    MatToolbarModule,
     MatInputModule,
-    MatToolbarModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatTableModule
   ],
-  entryComponents: [CustomerFormComponent],
-  declarations: [CustomerComponent, CustomerFormComponent],
-  providers: [CustomerService],
-  exports: [CustomerComponent]
+  exports: [
+    CustomerComponent
+  ],
+  providers: [
+    CustomerComponent
+  ]
 })
 export class CustomerModule { }

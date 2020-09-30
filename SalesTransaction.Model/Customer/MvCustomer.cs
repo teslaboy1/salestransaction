@@ -17,8 +17,7 @@ namespace SalesTransaction.Model.Customer
         public long contactNo { get; set; }
         [Required]
         public int insertPersonId { get; set; }
-        [Required]
-        public DateTime insertDate { get; set; }
+
 
     }
 
@@ -36,8 +35,8 @@ namespace SalesTransaction.Model.Customer
         public long contactNo { get; set; }
         [Required]
         public int insertPersonId { get; set; }
-        [Required]
-        public DateTime insertDate { get; set; }
+        
+       
 
 
     }

@@ -3,8 +3,9 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { UtilityService } from 'src/core/services/utility.service';
 import { CustomerFormComponent } from './customer-form/customer-form.component';
-import { MvAddCustomer, MvCustomer } from './customer.model';
+import { MvCustomer, MvAddCustomer } from './customer.model';
 import { CustomerService } from './customer.service';
 
 @Component({
@@ -13,65 +14,67 @@ import { CustomerService } from './customer.service';
   styleUrls: ['./customer.component.scss']
 })
 export class CustomerComponent implements OnInit {
-  userMessage = '';
+
   displayedColumns: string[];
   dataSource: MatTableDataSource<MvCustomer>;
+  errorMessage = '';
   selectedCustomer: MvAddCustomer = <MvAddCustomer>{};
   selection = new SelectionModel<MvCustomer>(false, []);
 
-  constructor(
-    private customerService: CustomerService,
-    public dialog: MatDialog
-  ) { }
+  constructor(private customerService: CustomerService,
+    private dialog: MatDialog,
+    private utilityService: UtilityService) { }
 
   ngOnInit(): void {
     this.displayedColumns = ['customerId', 'firstName', 'middleName', 'surname', 'contactNo'];
-    this.getAllCustomerDetail();
+    this.getAllCustomers();
   }
-  getAllCustomerDetail() {
+
+  getAllCustomers(){
     this.customerService.getAllCustomerDetail().subscribe((response: any) => {
       if (response && response.data) {
         this.dataSource = new MatTableDataSource<MvCustomer>(response.data);
       } else {
         this.dataSource = new MatTableDataSource<MvCustomer>();
-        this.userMessage = 'No customers !';
+        this.errorMessage = 'No data';
       }
     });
-
   }
 
-  addCustomer() {
+  onAdd(){
     this.selection.clear();
     this.selectedCustomer = <MvCustomer>{};
     this.openDialog('Add');
   }
-
-  editCustomer() {
+  onEdit(){
     this.openDialog('Edit');
   }
 
-  openDialog(action: string) {
-    if (action === 'Edit' && !this.selection.hasValue()) {
+  openDialog(action: string){
+    if (action === 'Edit' && !this.selection.hasValue()){
+      this.utilityService.openSnackBar('Please Select Row first', 'warn');
       return;
     }
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.width = '30%';
+    dialogConfig.width = '25%';
     dialogConfig.panelClass = 'mat-form-dialog';
-    dialogConfig.data = { data: this.selectedCustomer, action: action };
+    dialogConfig.data = {data: this.selectedCustomer, action: action};
     const dialogRef = this.dialog.open(CustomerFormComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        if (action === 'Edit') {
+        if (action === 'Edit'){
           this.customerService.editCustomer(result).subscribe(res => {
-            this.getAllCustomerDetail();
+            this.utilityService.openSnackBar('Customer Edited', 'success');
+            this.getAllCustomers();
           });
 
         } else {
           this.customerService.addCustomer(result).subscribe(res => {
-            this.getAllCustomerDetail();
+            this.utilityService.openSnackBar('Customer added successfully', 'success');
+            this.getAllCustomers();
           });
         }
       }
@@ -79,8 +82,8 @@ export class CustomerComponent implements OnInit {
     });
   }
 
-  selectRow(e: any, row: MvCustomer) {
-    this.selectedCustomer = { ...row };
+  selectRow(e: any, row: MvCustomer){
+    this.selectedCustomer = {...row};
     this.selection.toggle(row);
   }
 
