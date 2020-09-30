@@ -10,7 +10,9 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { LoginComponent } from './login/login.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './shared/material.module';
+
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full'},
@@ -26,6 +28,10 @@ const appRoutes: Routes = [
     path: 'product',
     loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
   },
+  {
+    path: 'customer',
+    loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule)
+  },
 
 ];
 
@@ -39,7 +45,9 @@ const appRoutes: Routes = [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    NoopAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

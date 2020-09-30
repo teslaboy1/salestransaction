@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { MvAddProduct, MvProduct } from './product.model';
-import { ProductService } from './product.service';
-import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { ProductService } from './product.service';
 import { SelectionModel } from '@angular/cdk/collections';
+import { MvAddProduct, MvProduct } from './product.model';
 import { ProductFormComponent } from './product-form/product-form.component';
+import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-product',
@@ -12,7 +13,7 @@ import { ProductFormComponent } from './product-form/product-form.component';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-  errorMessage = '';
+  userMessage = '';
   displayedColumns: string[];
   dataSource: MatTableDataSource<MvProduct>;
   selectedProduct: MvAddProduct = <MvAddProduct>{};
@@ -24,7 +25,7 @@ export class ProductComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.displayedColumns = ['productId', 'productName', 'quantityAvailable', 'actualPrice', 'startDate', 'endDate'];
+    this.displayedColumns = ['productId', 'productName', 'quantityAvailable', 'marketPrice', 'startDate', 'endDate', 'manufactureDate', 'expiryDate' ];
     this.getAllProductDetail();
   }
   getAllProductDetail() {
@@ -33,7 +34,7 @@ export class ProductComponent implements OnInit {
         this.dataSource = new MatTableDataSource<MvProduct>(response.data);
       } else {
         this.dataSource = new MatTableDataSource<MvProduct>();
-        this.errorMessage = 'No product available !';
+        this.userMessage = 'No product available !';
       }
     });
 
@@ -51,13 +52,12 @@ export class ProductComponent implements OnInit {
 
   openDialog(action: string) {
     if (action === 'Edit' && !this.selection.hasValue()) {
-      // this.utilityService.openSnackBar('Please Select Row first', 'warn');
       return;
     }
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.width = '25%';
+    dialogConfig.width = '30%';
     dialogConfig.panelClass = 'mat-form-dialog';
     dialogConfig.data = { data: this.selectedProduct, action: action };
     const dialogRef = this.dialog.open(ProductFormComponent, dialogConfig);
@@ -66,13 +66,11 @@ export class ProductComponent implements OnInit {
       if (result) {
         if (action === 'Edit') {
           this.productService.editProduct(result).subscribe(res => {
-            // this.utilityService.openSnackBar('Product Edited', 'success');
             this.getAllProductDetail();
           });
 
         } else {
           this.productService.addProduct(result).subscribe(res => {
-            // this.utilityService.openSnackBar('Product added successfully', 'success');
             this.getAllProductDetail();
           });
         }
@@ -87,3 +85,5 @@ export class ProductComponent implements OnInit {
   }
 
 }
+
+

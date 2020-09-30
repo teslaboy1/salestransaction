@@ -1,0 +1,37 @@
+<div class="form-container">
+  <mat-toolbar color="Basic">{{action}} Customer</mat-toolbar>
+
+  <form class="customer-form" [formGroup]="customerForm">
+
+    <mat-form-field appearance="fill">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName" [(ngModel)]="selectedCustomer.firstName" required>
+      <mat-error *ngIf="customerForm.controls['firstName'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Middle Name</mat-label>
+      <input matInput formControlName="middleName" [(ngModel)]="selectedCustomer.middleName" required>
+      <mat-error *ngIf="customerForm.controls['middleName'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Surname</mat-label>
+      <input matInput formControlName="surname" [(ngModel)]="selectedCustomer.surname" required>
+      <mat-error *ngIf="customerForm.controls['surname'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Contact Number</mat-label>
+      <input matInput formControlName="contactNo" [(ngModel)]="selectedCustomer.contactNo" required>
+      <mat-error *ngIf="customerForm.controls['contactNo'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+
+  </form>
+
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="productForm.invalid">Save</button>
+    <button mat-raised-button color="warn" (click)="onClose()">Close</button>
+  </div>
+</div>
+

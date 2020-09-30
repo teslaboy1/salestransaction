@@ -39,5 +39,6 @@ namespace SalesTransaction.Model.Customer
         [Required]
         public DateTime insertDate { get; set; }
 
+
     }
 }

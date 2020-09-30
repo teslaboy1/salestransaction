@@ -21,7 +21,6 @@ namespace SalesTransaction.Model.Product
         public DateTime manufactureDate { get; set; }
         [Required]
         public DateTime expiryDate { get; set; }
-        [Required]
         public int insertPersonId { get; set; }
 
 
@@ -46,7 +45,6 @@ namespace SalesTransaction.Model.Product
         public DateTime manufactureDate { get; set; }
         [Required]
         public DateTime expiryDate { get; set; }
-        [Required]
         public int insertPersonId { get; set; }
         [Required]
         public DateTime insertDate { get; set; }

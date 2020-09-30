@@ -35,7 +35,7 @@ namespace SalesTransaction.WebApi
                 
                 Options.AddPolicy
                 (name: "AllowOrigin",
-                builder => builder.WithOrigins("http://localhost:4200","http://localhost:56399")
+                builder => builder.WithOrigins("http://localhost:4200")
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .AllowCredentials());
@@ -66,7 +66,7 @@ namespace SalesTransaction.WebApi
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllers().RequireCors("AllowOrigin");
             });
         }
     }

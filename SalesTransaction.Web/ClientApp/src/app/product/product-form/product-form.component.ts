@@ -19,8 +19,7 @@ export class ProductFormComponent implements OnInit, AfterViewInit {
     // tslint:disable-next-line: radix
     userId = parseInt(localStorage.getItem('userId'));
     selectedProduct: MvAddProduct = <MvAddProduct>{};
-  
-  
+
     constructor(
       private fb: FormBuilder,
       private dialogRef: MatDialogRef<ProductFormComponent>,
@@ -29,30 +28,33 @@ export class ProductFormComponent implements OnInit, AfterViewInit {
       this.action = data.action;
       this.selectedProduct = data.data || {};
     }
-  
+
     ngOnInit(): void {
       this.productForm = this.fb.group({
         productName: ['', Validators.required],
         quantityAvailable: ['', Validators.required],
-        actualPrice: ['', [Validators.required, Validators.pattern('[0-9]*')]],
+        marketPrice: ['', [Validators.required, Validators.pattern('[0-9]*')]],
         startDate: ['', [Validators.required]],
         endDate: ['', [Validators.required]],
+        manufactureDate: ['', [Validators.required]],
+        expiryDate: ['', [Validators.required]],
         insertPersonId: [this.userId]
       });
     }
-  
+
     onSubmit() {
       this.dialogRef.close(this.selectedProduct);
     }
-  
+
     onClose() {
       this.dialogRef.close();
     }
-  
+
     ngAfterViewInit(): void {
       this.productForm.updateValueAndValidity();
     }
-  
-  
-  
+
   }
+
+
+

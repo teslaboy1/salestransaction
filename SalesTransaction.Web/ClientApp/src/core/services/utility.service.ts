@@ -13,7 +13,7 @@ export class UtilityService {
   openSnackBar(message: string, action: string) {
 
     this.snackBar.open(message, 'close', {
-      duration: 5000, // in milli-seconds
+      duration: 3000, // in milli-seconds
       panelClass: [action],
       horizontalPosition: 'end',
       verticalPosition: 'top',

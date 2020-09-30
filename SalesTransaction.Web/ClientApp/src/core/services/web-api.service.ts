@@ -20,7 +20,7 @@ export class WebApiService {
 
 
     get(url: string, params?: any): Observable<any> {
-        return this.httpClient.get(this.apiUrl + url, { headers: this.getHeaderOptions(), params: { json: params } });
+        return this.httpClient.get(this.apiUrl + url, { headers: this.getHeaderOptions(), params: { json: params }});
     }
 
 

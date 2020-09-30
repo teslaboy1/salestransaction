@@ -41,15 +41,13 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
 
     this.errorMessage = '';
     if (this.loginForm.valid) {
-
-      // const json = this.loginForm.value;
       this.login.userName = this.loginForm.get('userName').value.trim();
       this.login.password = this.loginForm.get('password').value.trim();
 
       this.ls.getLogin(this.login).subscribe((response: any) => {
 
         if (response) {
-
+          console.log(response);
           localStorage.setItem('userId', response.userId);
           this.us.openSnackBar('Login Successful', 'success');
           this.router.navigate(['/user-detail']);

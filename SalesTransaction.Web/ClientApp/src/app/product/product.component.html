@@ -22,9 +22,9 @@
       <mat-cell *matCellDef="let ProductDetail"> {{ProductDetail.quantityAvailable}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="actualPrice">
-      <mat-header-cell *matHeaderCellDef> Actual Price (NRP)</mat-header-cell>
-      <mat-cell *matCellDef="let ProductDetail"> Rs. {{ProductDetail.actualPrice}} </mat-cell>
+    <ng-container matColumnDef="marketPrice">
+      <mat-header-cell *matHeaderCellDef> Market Price (NRP)</mat-header-cell>
+      <mat-cell *matCellDef="let ProductDetail"> Rs. {{ProductDetail.marketPrice}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="startDate">
@@ -35,6 +35,21 @@
     <ng-container matColumnDef="endDate">
       <mat-header-cell *matHeaderCellDef> End Date</mat-header-cell>
       <mat-cell *matCellDef="let ProductDetail">{{ProductDetail.endDate}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="manufactureDate">
+      <mat-header-cell *matHeaderCellDef> Manufacture Date</mat-header-cell>
+      <mat-cell *matCellDef="let ProductDetail">{{ProductDetail.manufactureDate}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="expiryDate">
+      <mat-header-cell *matHeaderCellDef> Expiry Date</mat-header-cell>
+      <mat-cell *matCellDef="let ProductDetail">{{ProductDetail.expiryDate}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="insertPersonId">
+      <mat-header-cell *matHeaderCellDef> Person ID </mat-header-cell>
+      <mat-cell *matCellDef="let ProductDetail">{{ProductDetail.insertPersonId}} </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

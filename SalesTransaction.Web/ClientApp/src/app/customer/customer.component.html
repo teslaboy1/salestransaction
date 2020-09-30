@@ -1,3 +1,47 @@
-<p>
-  customer works!
-</p>
+<h1>Customer Details</h1>
+
+<div>
+  <button mat-raised-button (click)="addCustomer()" color="warning"> Add Customer</button>
+  <button mat-raised-button (click)="editCustomer()" color="warning" class="ml-3">Edit Customer</button>
+  <br>
+  <br>
+  <h4> Customers !!! </h4>
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="customerId">
+      <mat-header-cell *matHeaderCellDef> Customer Id </mat-header-cell>
+      <mat-cell *matCellDef="let CustomerDetail"> {{CustomerDetail.customerId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="firstName">
+      <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
+      <mat-cell *matCellDef="let CustomerDetail"> {{CustomerDetail.firstName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="middleName">
+      <mat-header-cell *matHeaderCellDef> Middle Name </mat-header-cell>
+      <mat-cell *matCellDef="let CustomerDetail"> {{CustomerDetail.middleName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="surname">
+      <mat-header-cell *matHeaderCellDef> Surname </mat-header-cell>
+      <mat-cell *matCellDef="let CustomerDetail"> {{CustomerDetail.surname}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="contactNo">
+      <mat-header-cell *matHeaderCellDef> Contact Number </mat-header-cell>
+      <mat-cell *matCellDef="let CustomerDetail"> {{CustomerDetail.contactNo}} </mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow($event, row)"
+      [ngClass]="{hovered: row.hovered, highlighted: selection.isSelected(row)}" (mouseover)="row.hovered = true"
+      (mouseout)="row.hovered = false">
+    </mat-row>
+  </mat-table>
+  <span *ngIf="userMessage != ''" style="color: red;font-size: medium;font-weight: bold;"> {{userMessage}}</span>
+</div>
+
+
