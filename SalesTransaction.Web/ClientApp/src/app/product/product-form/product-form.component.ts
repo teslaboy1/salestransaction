@@ -33,7 +33,7 @@ export class ProductFormComponent implements OnInit, AfterViewInit {
       this.productForm = this.fb.group({
         productName: ['', Validators.required],
         quantityAvailable: ['', Validators.required],
-        marketPrice: ['', [Validators.required, Validators.pattern('[0-9]*')]],
+        actualPrice: ['', [Validators.required, Validators.pattern('[0-9]*')]],
         startDate: ['', [Validators.required]],
         endDate: ['', [Validators.required]],
         manufactureDate: ['', [Validators.required]],

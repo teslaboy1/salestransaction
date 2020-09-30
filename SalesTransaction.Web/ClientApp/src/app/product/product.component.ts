@@ -25,7 +25,7 @@ export class ProductComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.displayedColumns = ['productId', 'productName', 'quantityAvailable', 'marketPrice', 'startDate', 'endDate', 'manufactureDate', 'expiryDate' ];
+    this.displayedColumns = ['productId', 'productName', 'quantityAvailable', 'actualPrice', 'startDate', 'endDate', 'manufactureDate', 'expiryDate' ];
     this.getAllProductDetail();
   }
   getAllProductDetail() {

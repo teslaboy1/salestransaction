@@ -12,7 +12,7 @@ namespace SalesTransaction.Model.Product
         [Required]
         public int quantityAvailable { get; set; }
         [Required]
-        public int marketPrice { get; set; }
+        public int actualPrice { get; set; }
         [Required]
         public DateTime startDate { get; set; }
         [Required]
@@ -36,7 +36,7 @@ namespace SalesTransaction.Model.Product
         [Required]
         public string quantityAvailable { get; set; }
         [Required]
-        public float marketPrice { get; set; }
+        public float actualPrice { get; set; }
         [Required]
         public DateTime startDate { get; set; }
         [Required]

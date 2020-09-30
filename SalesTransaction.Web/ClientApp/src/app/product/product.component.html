@@ -1,8 +1,8 @@
 <h1>Product Details</h1>
 
 <div>
-  <button mat-raised-button (click)="addProduct()" color="primary"> Add Product</button>
-  <button mat-raised-button (click)="editProduct()" color="primary" class="ml-3">Edit Product</button>
+  <button mat-raised-button (click)="addProduct()" color="basic"> Add Product</button>
+  <button mat-raised-button (click)="editProduct()" color="basic" class="ml-3">Edit Product</button>
   <br>
   <br>
   <h4> products!!! </h4>
@@ -22,9 +22,9 @@
       <mat-cell *matCellDef="let ProductDetail"> {{ProductDetail.quantityAvailable}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="marketPrice">
-      <mat-header-cell *matHeaderCellDef> Market Price (NRP)</mat-header-cell>
-      <mat-cell *matCellDef="let ProductDetail"> Rs. {{ProductDetail.marketPrice}} </mat-cell>
+    <ng-container matColumnDef="actualPrice">
+      <mat-header-cell *matHeaderCellDef> Price (NRP)</mat-header-cell>
+      <mat-cell *matCellDef="let ProductDetail"> Rs. {{ProductDetail.actualPrice}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="startDate">
