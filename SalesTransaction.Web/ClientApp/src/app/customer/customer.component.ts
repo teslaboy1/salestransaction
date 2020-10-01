@@ -1,11 +1,11 @@
 
 import { SelectionModel } from '@angular/cdk/collections';
 import { Component, OnInit } from '@angular/core';
+import { MvCustomer, MvAddCustomer } from './customer.model';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { UtilityService } from 'src/core/services/utility.service';
 import { CustomerFormComponent } from './customer-form/customer-form.component';
-import { MvCustomer, MvAddCustomer } from './customer.model';
 import { CustomerService } from './customer.service';
 
 @Component({
@@ -41,12 +41,12 @@ export class CustomerComponent implements OnInit {
     });
   }
 
-  onAdd(){
+  onAdd() {
     this.selection.clear();
     this.selectedCustomer = <MvCustomer>{};
     this.openDialog('Add');
   }
-  onEdit(){
+  onEdit() {
     this.openDialog('Edit');
   }
 

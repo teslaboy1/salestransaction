@@ -1,7 +1,6 @@
 C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.Model\bin\Debug\netcoreapp3.1\SalesTransaction.Model.deps.json
 C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.Model\bin\Debug\netcoreapp3.1\SalesTransaction.Model.dll
 C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.Model\bin\Debug\netcoreapp3.1\SalesTransaction.Model.pdb
-C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.Model\obj\Debug\netcoreapp3.1\SalesTransaction.Model.csprojAssemblyReference.cache
 C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.Model\obj\Debug\netcoreapp3.1\SalesTransaction.Model.AssemblyInfoInputs.cache
 C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.Model\obj\Debug\netcoreapp3.1\SalesTransaction.Model.AssemblyInfo.cs
 C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.Model\obj\Debug\netcoreapp3.1\SalesTransaction.Model.csproj.CoreCompileInputs.cache

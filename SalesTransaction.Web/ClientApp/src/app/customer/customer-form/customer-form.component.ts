@@ -34,15 +34,14 @@ export class CustomerFormComponent implements OnInit, AfterViewInit {
       contactNo: ['',
        [Validators.required,
         Validators.pattern('[0-9]*')]],
-        // Validators.minLength(8), Validators.maxLength(15)]],
       insertPersonId: [ this.userId ]
     });
   }
 
-  onSubmit(){
+  onSubmit() {
     this.dialogRef.close(this.selectedCustomer);
   }
-  onClose(){
+  onClose() {
     this.dialogRef.close();
     this.utilityService.openSnackBar('Operation Cancelled', 'warn');
   }

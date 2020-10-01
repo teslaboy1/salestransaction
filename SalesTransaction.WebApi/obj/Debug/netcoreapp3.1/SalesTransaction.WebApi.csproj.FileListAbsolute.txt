@@ -1,3 +1,8 @@
+C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.WebApi\obj\Debug\netcoreapp3.1\SalesTransaction.WebApi.csprojAssemblyReference.cache
+C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.WebApi\obj\Debug\netcoreapp3.1\SalesTransaction.WebApi.AssemblyInfoInputs.cache
+C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.WebApi\obj\Debug\netcoreapp3.1\SalesTransaction.WebApi.AssemblyInfo.cs
+C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.WebApi\obj\Debug\netcoreapp3.1\SalesTransaction.WebApi.csproj.CoreCompileInputs.cache
+C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.WebApi\obj\Debug\netcoreapp3.1\SalesTransaction.WebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.WebApi\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.WebApi\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.WebApi\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -26,11 +31,6 @@ C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.WebA
 C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.WebApi\bin\Debug\netcoreapp3.1\SalesTransaction.DataAccess.pdb
 C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.WebApi\bin\Debug\netcoreapp3.1\SalesTransaction.Model.pdb
 C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.WebApi\bin\Debug\netcoreapp3.1\SalesTransaction.Service.pdb
-C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.WebApi\obj\Debug\netcoreapp3.1\SalesTransaction.WebApi.csprojAssemblyReference.cache
-C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.WebApi\obj\Debug\netcoreapp3.1\SalesTransaction.WebApi.AssemblyInfoInputs.cache
-C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.WebApi\obj\Debug\netcoreapp3.1\SalesTransaction.WebApi.AssemblyInfo.cs
-C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.WebApi\obj\Debug\netcoreapp3.1\SalesTransaction.WebApi.csproj.CoreCompileInputs.cache
-C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.WebApi\obj\Debug\netcoreapp3.1\SalesTransaction.WebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.WebApi\obj\Debug\netcoreapp3.1\SalesTransaction.WebApi.RazorTargetAssemblyInfo.cache
 C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.WebApi\obj\Debug\netcoreapp3.1\SalesTransaction.WebApi.csproj.CopyComplete
 C:\Users\baidy\Downloads\SalesTransaction\SalesTransaction\SalesTransaction.WebApi\obj\Debug\netcoreapp3.1\staticwebassets\SalesTransaction.WebApi.StaticWebAssets.Manifest.cache

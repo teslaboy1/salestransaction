@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { ProductFormComponent } from './product-form/product-form.component';
 import { ProductService } from './product.service';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MvAddProduct, MvProduct } from './product.model';
-import { ProductFormComponent } from './product-form/product-form.component';
-import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 
 @Component({

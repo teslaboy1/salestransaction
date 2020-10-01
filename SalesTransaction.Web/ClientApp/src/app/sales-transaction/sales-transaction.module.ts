@@ -3,24 +3,24 @@ import { MaterialModule } from './../shared/material.module';
 import { ProductFormComponent } from './../product/product-form/product-form.component';
 import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CustomerFormComponent } from './customer-form/customer-form.component';
-import { CustomerComponent } from './customer.component';
+import { TransactionFormComponent } from './transaction-form/transaction-form.component';
+import { SalesTransactionComponent } from './sales-transaction.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CdkTableModule } from '@angular/cdk/table';
 import { MatDialogModule, MatFormFieldModule, MatInputModule, MatTableModule, MatToolbarModule } from '@angular/material';
 
 const routes: Routes = [
-  { path: '', component: CustomerComponent}
+  { path: '', component: SalesTransactionComponent}
 ];
 
 
 @NgModule({
   declarations: [
-    CustomerComponent,
-    CustomerFormComponent
+    SalesTransactionComponent,
+    TransactionFormComponent
   ],
-  entryComponents:[CustomerFormComponent],
+  entryComponents:[TransactionFormComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -35,10 +35,10 @@ const routes: Routes = [
     MatTableModule
   ],
   exports: [
-    CustomerComponent
+    SalesTransactionComponent
   ],
   providers: [
-    CustomerComponent
+    SalesTransactionComponent
   ]
 })
-export class CustomerModule { }
+export class TransactionModule { }

@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
+import { SalesTransactionComponent } from './sales-transaction/sales-transaction.component';
 
 
 const appRoutes: Routes = [
@@ -32,6 +33,10 @@ const appRoutes: Routes = [
     path: 'customer',
     loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule)
   },
+  {
+    path: 'sales-transaction',
+    loadChildren: () => import('./sales-transaction/sales-transaction.module').then(m => m.TransactionModule)
+  },
 
 ];
 
@@ -39,7 +44,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     NavMenuComponent,
-    HomeComponent
+    HomeComponent,
    ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
