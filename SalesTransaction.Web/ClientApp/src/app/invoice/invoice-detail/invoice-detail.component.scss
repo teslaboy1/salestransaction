@@ -1,0 +1,31 @@
+table {
+    width: 100%;
+  }
+  
+  button{
+    margin: 20px 0;
+    margin-right: 20px;
+  }
+  
+  mat-card{
+    margin: 10px 5px 20px 5px;
+  }
+  
+  .dialog-container {
+    h2{
+      font-size: 20px;
+      color: rgb(92, 86, 86);
+    }
+    mat-card-title{
+      font-size: 15px;
+      color: rgb(92, 86, 86);
+    }
+    table{
+      margin-top: 15px;
+      color: rgb(92, 86, 86);
+    }
+    tfoot{
+      padding-top: 10px;
+      border-top: 1px solid rgb(92, 86, 86);
+    }
+  }

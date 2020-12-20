@@ -10,9 +10,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using SalesTransaction.Application.Service.Invoice;
 using SalesTransaction.Service.Account;
 using SalesTransaction.Service.Customer;
 using SalesTransaction.Service.Product;
+using SalesTransaction.Service.Transaction;
 
 namespace SalesTransaction.WebApi
 {
@@ -46,6 +48,8 @@ namespace SalesTransaction.WebApi
             services.AddTransient<IAccountService, AccountService>();
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<ITransactionService, TransactionService>();
+            services.AddTransient<IInvoiceService, InvoiceService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

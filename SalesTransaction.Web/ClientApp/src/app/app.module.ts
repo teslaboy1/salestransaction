@@ -13,6 +13,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
 import { SalesTransactionComponent } from './sales-transaction/sales-transaction.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 
 
 const appRoutes: Routes = [
@@ -35,16 +36,22 @@ const appRoutes: Routes = [
   },
   {
     path: 'sales-transaction',
-    loadChildren: () => import('./sales-transaction/sales-transaction.module').then(m => m.TransactionModule)
+    loadChildren: () => import('./sales-transaction/sales-transaction.module').then(m => m.SalesTransactionModule)
+  },
+  {
+    path: 'invoice',
+    loadChildren: () => import('./invoice/invoice.module').then(m => m.InvoiceModule)
   },
 
 ];
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     NavMenuComponent,
     HomeComponent,
+      InvoiceComponent
+      
    ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

@@ -1,23 +1,20 @@
-/* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TransactionFormComponent } from './transaction-form.component';
+import { SalesTransactionFormComponent } from './transaction-form.component';
 
-describe('TransactionFormComponent', () => {
-  let component: TransactionFormComponent;
-  let fixture: ComponentFixture<TransactionFormComponent>;
+describe('SalesTransactionFormComponent', () => {
+  let component: SalesTransactionFormComponent;
+  let fixture: ComponentFixture<SalesTransactionFormComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ TransactionFormComponent ]
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ SalesTransactionFormComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TransactionFormComponent);
+    fixture = TestBed.createComponent(SalesTransactionFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

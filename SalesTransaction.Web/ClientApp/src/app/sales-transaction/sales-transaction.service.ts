@@ -1,25 +1,22 @@
-import { WebApiService } from 'src/core/services/web-api.service';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
+import { Observable } from 'rxjs';
+import { WebApiService } from '../../core/services/web-api.service';
+
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
+})
+export class SalesTransactionService {
+
+constructor(private api: WebApiService) { }
+addTransaction(json: any): Observable<any> {
+  return this.api.post('transaction/AddTransaction', json);
+ }
+getTransaction() {
+  return this.api.get('transaction/AllTransactionDetail');
 }
-)
-export class TransactionService {
-
-    constructor(private api: WebApiService) {}
-
-    getAllTransactionDetail() {
-        return this.api.get('transaction/alltransactiondetail');
-    }
-
-    addTransaction(json): Observable<any> {
-        return this.api.post('transaction/addtransaction', json);
-    }
-
-    editTransaction(json): Observable<any> {
-        return this.api.post('transaction/edittransaction', json);
-    }
+updateTransaction(json: any): Observable<any> {
+  return this.api.post('transaction/EditTransaction', json);
+}
 
 }

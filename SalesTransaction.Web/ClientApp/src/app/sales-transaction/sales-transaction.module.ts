@@ -1,26 +1,24 @@
-import { HttpClientModule } from '@angular/common/http';
-import { MaterialModule } from './../shared/material.module';
-import { ProductFormComponent } from './../product/product-form/product-form.component';
-import { NgModule, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { TransactionFormComponent } from './transaction-form/transaction-form.component';
 import { SalesTransactionComponent } from './sales-transaction.component';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { SalesTransactionFormComponent } from './transaction-form/transaction-form.component';
+import { RouterModule, Routes } from '@angular/router';
+import { MaterialModule } from '../shared/material.module';
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CdkTableModule } from '@angular/cdk/table';
-import { MatDialogModule, MatFormFieldModule, MatInputModule, MatTableModule, MatToolbarModule } from '@angular/material';
+import { MatToolbarModule } from '@angular/material';
 
 const routes: Routes = [
-  { path: '', component: SalesTransactionComponent}
+  { path: '', component: SalesTransactionComponent }
 ];
-
 
 @NgModule({
   declarations: [
     SalesTransactionComponent,
-    TransactionFormComponent
+    SalesTransactionFormComponent
   ],
-  entryComponents:[TransactionFormComponent],
+  entryComponents:[SalesTransactionFormComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -28,11 +26,7 @@ const routes: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     CdkTableModule,
-    MatToolbarModule,
-    MatInputModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatTableModule
+    MatToolbarModule
   ],
   exports: [
     SalesTransactionComponent
@@ -41,4 +35,4 @@ const routes: Routes = [
     SalesTransactionComponent
   ]
 })
-export class TransactionModule { }
+export class SalesTransactionModule { }

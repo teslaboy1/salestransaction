@@ -1,0 +1,71 @@
+<div class="dialog-container">
+  <h2>Invoice Details</h2>
+  <mat-card>
+    <mat-card-title>Sales</mat-card-title>
+    <mat-card-content>
+      <table style="width:100%">
+        <thead>
+          <tr>
+            <th>Sales Id</th>
+            <th>Invoice Id</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Rate</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let sales of salesData">
+            <td>{{sales.salesTransactionId}}</td>
+            <td>{{sales.invoiceId}}</td>
+            <td>{{sales.productName}}</td>
+            <td>{{sales.quantity}}</td>
+            <td>${{sales.rate}}</td>
+            <td>${{sales.totalAmount}}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Total</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>${{salesTotal}}</td>
+          </tr>
+        </tfoot>
+      </table>
+
+    </mat-card-content>
+  </mat-card>
+
+
+  <mat-card>
+    <mat-card-title>Summary</mat-card-title>
+    <mat-card-content>
+      <table style="width:100%">
+        <tr>
+          <th>Invoice Id</th>
+          <th>Customer Id</th>
+          <th>Customer Name</th>
+          <th>Amount</th>
+          <th>Amount After Discount</th>
+          <th>Insert Date</th>
+        </tr>
+        <tr>
+          <td>{{selectedInvoice.invoiceId}}</td>
+          <td>{{selectedInvoice.customerId}}</td>
+          <td>{{selectedInvoice.customerName}}</td>
+          <td>{{selectedInvoice.amount}}</td>
+          <td>{{selectedInvoice.amountAfterDiscount}}</td>
+          <td>{{selectedInvoice.insertDate}}</td>
+        </tr>
+      </table>
+    </mat-card-content>
+
+  </mat-card>
+
+
+  <button mat-raised-button color="primary" (click)="onPrint()">Print</button>
+  <button mat-raised-button color="warn" (click)="onClose()">Close</button>
+</div>
