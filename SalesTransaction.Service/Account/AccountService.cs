@@ -21,7 +21,7 @@ namespace SalesTransaction.Service.Account
         public AccountService(IConfiguration configuration)
         {
             _configuration = configuration;
-
+            //dynamic vanepaxi initially assign garna pardaina
             dynamic connectionString = _configuration.GetSection("ConnectionString");
             _connectionString = connectionString["DefaultConnection"];
 
